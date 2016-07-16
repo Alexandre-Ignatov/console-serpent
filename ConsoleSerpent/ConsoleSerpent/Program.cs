@@ -8,14 +8,14 @@ namespace ConsoleSerpent {
 	class Program {
 		static void Main(string[] args) {
 
-			Point p1 = new Point(1, 3, '*');
-			Point p2 = new Point(2, 6, '@');
-			Point p3 = new Point(7, 2, '^');
+			Console.SetBufferSize(80, 25);
 
-			HorizontalLine line1 = new HorizontalLine(4, 7, 5, '&');
-			line1.Draw();
-			VerticalLine line2 = new VerticalLine(4, 7, 5, '&');
-			line2.Draw();
+			new HorizontalLine(0, 0, 80, '#').Draw();
+			new HorizontalLine(0, 23, 80, '#').Draw();
+			new VerticalLine(0, 0, 24, '#').Draw();
+			new VerticalLine(79, 0, 24, '#').Draw();
+
+			new Point(4, 4, '@').Draw();
 
 			Console.ReadLine();
 		}
