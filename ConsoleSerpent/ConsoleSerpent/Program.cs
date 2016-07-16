@@ -12,15 +12,8 @@ namespace ConsoleSerpent {
 			Point p2 = new Point(2, 6, '@');
 			Point p3 = new Point(7, 2, '^');
 
-			List<Point> pointList = new List<Point>();
-			pointList.Add(p1);
-			pointList.Add(p2);
-			pointList.Add(p3);
-
-			foreach (Point i in pointList) {
-				i.Draw();
-			}
-
+			HorizontalLine line = new HorizontalLine(4, 7, 12, '&');
+			line.Draw();
 
 			Console.ReadLine();
 		}
