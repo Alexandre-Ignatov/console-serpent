@@ -9,13 +9,18 @@ namespace ConsoleSerpent {
 		static void Main(string[] args) {
 
 			Point p1 = new Point(1, 3, '*');
-			p1.Draw();
-
 			Point p2 = new Point(2, 6, '@');
-			p2.Draw();
-
 			Point p3 = new Point(7, 2, '^');
-			p3.Draw();
+
+			List<Point> pointList = new List<Point>();
+			pointList.Add(p1);
+			pointList.Add(p2);
+			pointList.Add(p3);
+
+			foreach (Point i in pointList) {
+				i.Draw();
+			}
+
 
 			Console.ReadLine();
 		}
