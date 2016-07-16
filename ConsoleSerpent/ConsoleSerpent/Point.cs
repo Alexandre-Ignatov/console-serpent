@@ -15,10 +15,51 @@ namespace ConsoleSerpent {
 			Console.Write(symbol);
 		}
 
+		public void Clear() {
+			symbol = ' ';
+			Draw();
+		}
+
+		public void Move(int offset, Direction direction) {
+			if (direction == Direction.RIGHT) {
+				x = x + offset;
+			}
+			if (direction == Direction.LEFT) {
+				x = x - offset;
+			}
+			if (direction == Direction.UP) {
+				y = y - offset;
+			}
+			if (direction == Direction.DOWN) {
+				y = y + offset;
+			}
+		}
+
+		public void MoveOpposite(int offset, Direction direction) {
+			if (direction == Direction.RIGHT) {
+				x = x - offset;
+			}
+			if (direction == Direction.LEFT) {
+				x = x + offset;
+			}
+			if (direction == Direction.UP) {
+				y = y + offset;
+			}
+			if (direction == Direction.DOWN) {
+				y = y - offset;
+			}
+		}
+
 		public Point(int _x, int _y, char _symbol) {
 			x = _x;
 			y = _y;
 			symbol = _symbol;
+		}
+
+		public Point(Point p) {
+			x = p.x;
+			y = p.y;
+			symbol = p.symbol;
 		}
 	}
 }
