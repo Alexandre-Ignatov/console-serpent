@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace ConsoleSerpent {
 	class Program {
@@ -14,14 +15,21 @@ namespace ConsoleSerpent {
 			new VerticalLine(0, 0, 24, '#').Draw();
 			new VerticalLine(79, 0, 24, '#').Draw();
 
-			Point head = new Point(8, 8, '@');
+			new VerticalLine(10, 0, 24, '#').Draw();
+
+			Point head = new Point(8, 8, '$');
 
 			Snake snake = new Snake(head, 3, Direction.RIGHT);
 			snake.Draw();
-			snake.Move();
 
-			Console.ReadLine();
+			while(true) {
+				if (Console.KeyAvailable) {
+					ConsoleKeyInfo key = Console.ReadKey();
+					snake.ControlMovement(key.Key);					
+				}
+				Thread.Sleep(100);
+				snake.Move();
+			}
 		}
-
 	}
 }

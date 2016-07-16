@@ -35,5 +35,16 @@ namespace ConsoleSerpent {
 			nextPoint.Move(1, direction);
 			return nextPoint;
 		}
+
+		public void ControlMovement(ConsoleKey key) {
+			if (key == ConsoleKey.LeftArrow)
+				direction = Direction.LEFT;
+			if (key == ConsoleKey.RightArrow)
+				direction = Direction.RIGHT;
+			if (key == ConsoleKey.UpArrow)
+				direction = Direction.UP;
+			if (key == ConsoleKey.DownArrow)
+				direction = Direction.DOWN;
+		}
 	}
 }
