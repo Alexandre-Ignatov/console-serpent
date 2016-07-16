@@ -8,11 +8,14 @@ namespace ConsoleSerpent {
 	class Program {
 		static void Main(string[] args) {
 
-			Point p1 = new Point();
-			p1.x = 1;
-			p1.y = 3;
-			p1.symbol = '*';
+			Point p1 = new Point(1, 3, '*');
 			p1.Draw();
+
+			Point p2 = new Point(2, 6, '@');
+			p2.Draw();
+
+			Point p3 = new Point(7, 2, '^');
+			p3.Draw();
 
 			Console.ReadLine();
 		}
