@@ -50,6 +50,10 @@ namespace ConsoleSerpent {
 			}
 		}
 
+		public bool IsHit(Point p) {
+			return p.x == this.x && p.y == this.y;
+		}
+
 		public Point(int _x, int _y, char _symbol) {
 			x = _x;
 			y = _y;

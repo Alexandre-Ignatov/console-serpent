@@ -46,5 +46,26 @@ namespace ConsoleSerpent {
 			if (key == ConsoleKey.DownArrow)
 				direction = Direction.DOWN;
 		}
+
+		internal bool Eat(Point food) {
+			Point head = GetNextPoint();
+
+			if (head.IsHit(food)) {
+				food.symbol = head.symbol;
+				pList.Add(food);
+				return true;
+			}
+			return false;
+		}
+
+		internal bool IsHitTail() {
+			Point head = pList.First();
+			
+			for (int i = 1; i < pList.Count - 2; i++) {
+				if (head.IsHit(pList[i]))
+					return true;
+			}
+			return false;
+		}
 	}
 }
